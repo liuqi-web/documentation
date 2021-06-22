@@ -26,11 +26,11 @@ module.exports = {
     editLinks: true,
     editLinkText: '帮助我们改善此页面！',
     smoothScroll: true,
-    // nav: [
-    //   { text: 'web', link: '/web/' },
-    //   { text: 'H5', link: '/H5/' },
-    //   { text: '企微', link: '/qw/' },
-    // ],
+    nav: [
+      { text: 'web', link: '/web/' },
+      // { text: 'H5', link: '/H5/' },
+      { text: '企微', link: '/qw/introduction/' },
+    ],
     sidebar: {
       '/web/': [
         {
@@ -42,6 +42,7 @@ module.exports = {
             { title: 'HjBaseRichText 富文本', path: '/web/components/HjBaseRichText' },
             { title: 'HjBaseTitle 标题', path: '/web/components/HjBaseTitle' },
             { title: 'HjDateRange 时间范围', path: '/web/components/HjDateRange' },
+            { title: 'HjDayMonthYearRangePicker 日周月时间范围', path: '/web/components/HjDayMonthYearRangePicker' },
             { title: 'HjDragSort 拖拽', path: '/web/components/HjDragSort' },
             { title: 'HjFileIcon 文件icon', path: '/web/components/HjFileIcon' },
             { title: 'HjHelpTip 提示信息', path: '/web/components/HjHelpTip' },
@@ -94,12 +95,43 @@ module.exports = {
         }
       ],
       '/h5/': [],
-      '/qw/': []
+      '/qw/': [
+        {
+          title: '介绍',
+          path: '/qw/introduction/'
+        },
+        {
+          title: '组件',
+          children: [
+            { title: 'BaseExpandCollapse 文本超出隐藏', path: '/qw/components/BaseExpandCollapse' },
+            { title: 'HjFileIcon 文件icon', path: '/qw/components/HjFileIcon' },
+            { title: 'QwBack 返回', path: '/qw/components/QwBack' },
+            { title: 'QwDialog 弹框', path: '/qw/components/QwDialog' },
+            { title: 'QwSearch 搜索', path: '/qw/components/QwSearch' },
+          ]
+        },
+        {
+          title: '混入',
+          children: [
+            { title: 'clickOutside 点击外部', path: '/qw/mixins/clickOutside' },
+            { title: 'encrypt 手机号复制', path: '/qw/mixins/encrypt' }
+          ]
+        },
+        {
+          title: '方法',
+          path: '/qw/methods/'
+        },
+        {
+          title: '目录结构',
+          path: '/qw/directory/'
+        }
+      ]
     }
   },
   plugins: [
     'demo-container',
     '@vuepress/back-to-top',
-    '@vuepress/medium-zoom'
+    '@vuepress/medium-zoom',
+    require('dateformat')
   ],
 }
