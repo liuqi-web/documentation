@@ -11,7 +11,16 @@ module.exports = {
     }
   },
   head: [
-    ['link', { rel: 'shortcut icon', type: "image/x-icon", href: 'favicon.ico' }]
+    ['link', { rel: 'shortcut icon', type: "image/x-icon", href: 'favicon.ico' }],
+    ['script', {}, `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?619bce33d3d0afd261bb503674730cc7";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+    `]
   ],
   title: "文档",
   description: "This is front-end documentation.",
@@ -105,6 +114,7 @@ module.exports = {
           children: [
             { title: 'BaseExpandCollapse 文本超出隐藏', path: '/qw/components/BaseExpandCollapse' },
             { title: 'HjFileIcon 文件icon', path: '/qw/components/HjFileIcon' },
+            { title: 'HjList 列表', path: '/qw/components/HjList' },
             { title: 'QwBack 返回', path: '/qw/components/QwBack' },
             { title: 'QwDialog 弹框', path: '/qw/components/QwDialog' },
             { title: 'QwSearch 搜索', path: '/qw/components/QwSearch' },
